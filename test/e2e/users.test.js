@@ -128,8 +128,9 @@ describe.only('User Management Api', () => {
             .then(() => request.get('/users'))
             .then(res => res.body)
             .then(users => {
-                assert.equal(users.length, 3);
+                assert.equal(users.length, 4);
                 function test(fakeUser) {
+                    console.log(fakeUser);
                     assert.include(users, {
                         name: fakeUser.name,
                         artist: fakeUser.artist,
